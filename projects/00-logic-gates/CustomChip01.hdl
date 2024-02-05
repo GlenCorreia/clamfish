@@ -1,0 +1,10 @@
+CHIP CustomChip01 {
+    IN a, b, p, q;
+    OUT out;
+
+    PARTS:
+    Nand(a=a, b=b, out=out1);
+    Or(a=p, b=q, out=out2);
+    Nor(a=out1, b=out2, out=out3);
+    Or(a=a, b=out3, out=out);
+}
