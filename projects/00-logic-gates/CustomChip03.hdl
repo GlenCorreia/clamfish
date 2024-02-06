@@ -1,0 +1,11 @@
+CHIP CustomChip03 {
+    IN a, b, c;
+    OUT out;
+
+    PARTS:
+    Nand(a=a, b=b, out=out1);
+    Not(in=out1, out=notout1);
+    Xor(a=out1, b=c, out=out2);
+    And(a=notout1, b=out2, out=out3);
+    Or(a=out3, b=c, out=out);
+}
